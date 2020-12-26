@@ -271,7 +271,7 @@ dobj.p.fonts.normal = normal
       end
    end
    dobj.guihideshow = function(kcode) --function(kcode,vkey)
-    -- сочетание  if vkey == kcode then
+   if vkey == vkey then
          if dobj.p.guishow == true then
             dobj.p.guishow = false
             for i in pairs(dobj.p.forms) do
