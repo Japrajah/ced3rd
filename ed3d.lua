@@ -1,5 +1,5 @@
 _G["ed3d"] = {}
-
+--LIVE GUI NO CHANDE
 ed3d.createD3DHook =
 function()
    local dobj = createD3DHook()
