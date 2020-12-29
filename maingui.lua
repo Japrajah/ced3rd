@@ -1,7 +1,7 @@
 local d3dobject = ed3d.createD3DHook()
 
 d3dobject.createForm("f1","Cheats by Japrajah & Scub",350,170) -- formname,caption,width,height
-d3dobject.createForm("f2","Logs",250,140)
+d3dobject.createForm("f2","Debug",250,140)
 d3dobject.createForm("extra","extra",250,120)
 
 d3dobject.createOnOffToggle("oot1","ESP Team","f1", 10,30) --name,caption,formname,x,y
@@ -117,7 +117,7 @@ writeFloat(red + 0x3B0,0.16)
          end,
       function()
          -- off
-         d3dobject.getComponent("lbl4","f2").text = "Deactivated"
+         d3dobject.getComponent("lbl3","f2").text = "Deactivated"
 
          end
          )
@@ -135,6 +135,6 @@ end
 
 
 d3dobject.onkeydown = function(vkey,char)
-   d3dobject.guihideshow(27,vkey) --press ctrl + q to hide/show gui
+   d3dobject.guihideshow(27,vkey) -- escape 
 end
  
