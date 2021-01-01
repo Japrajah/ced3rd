@@ -123,12 +123,16 @@ writeFloat(red + 0x3B0,0.16)
          )
 
    d3dobject.buttonClicked(sender,"btn1","f1",function()
+enmx = 32
+enmy = 1
+enmz = 32
+aimbot(enmx, enmy, enmz)
 
       -- clicked
       d3dobject.getComponent("lbl1","f2").text = "Japrajah"
       d3dobject.getComponent("lbl2","f2").text = "Scub"
-      d3dobject.getComponent("lbl3","f2").text = "dbg3"
-      d3dobject.getComponent("lbl4","f2").text = "dbg4"
+      d3dobject.getComponent("lbl3","f2").text = "aim test"
+      d3dobject.getComponent("lbl4","f2").text = "aim test"
    end)
 
 end
