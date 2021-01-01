@@ -72,60 +72,42 @@ writeBytes(ffadr + 0x218,gamemode) --restore gamemode
    d3dobject.OnOffToggleClicked(sender,"oot2","f1",
       function()
          -- on
-         d3dobject.getComponent("lbl2","f2").text = "LBGTred Activated"
-asb = getAddress("GameAssembly.dll")
-  red = readPointer(asb + 0x00B24720)
-  red = readPointer(red + 0x198)
-  red = readPointer(red + 0xCC8)
-  red = readPointer(red + 0x48)
- red = readPointer(red + 0x34)
-
-lbgtime = createTimer(getMainForm())
-lbgtime.Interval = 70
-local upred = 0.16
-local incr = 0
-local decred = 0
-lbgtime.OnTimer = function(lbgtime)--timer
-maxref = readFloat(red + 0x3B0)
-  if incr < 1 and maxref < 1 then
-  incr = incr + 0.05
-  upred = upred + 0.04
-  writeFloat(red + 0x3B0,upred)
- elseif decred < 1 and upred > 0.16 then
-decred = decred +0.05
-upred = upred - 0.05
- writeFloat(red + 0x3B0,upred)
-  else
-upred = 0.16
- incr = 0
- decred = 0
- end
- end
+         d3dobject.getComponent("lbl2","f2").text = "LBGTrgb Activated"
+         if color == nil then
+         color = 0x3B0 --red
+            else
+            color= 0x3D4 --green
+            else
+            color = 0x3F8 -- blue
+         end
+lgbtmode(color)
       end,
       function()
          -- off
          d3dobject.getComponent("lbl2","f2").text = "LBGTred Deactivated"
 lbgtime.destroy()
-writeFloat(red + 0x3B0,0.16)
+writeFloat(red + color,0.16)
       end
    )
       d3dobject.OnOffToggleClicked(sender,"oot3","extra",
       function()
          -- on
-         d3dobject.getComponent("lbl3","f2").text = "Activated"
+         lgbtmode(0x3B0)
+         d3dobject.getComponent("lbl3","f2").text = "redActivated"
 
          end,
       function()
+         lbgtime.destroy()
          -- off
-         d3dobject.getComponent("lbl3","f2").text = "Deactivated"
+         d3dobject.getComponent("lbl3","f2").text = "redDeactivated"
 
          end
          )
 
    d3dobject.buttonClicked(sender,"btn1","f1",function()
-enmx = 32
+enmx = 10
 enmy = 1
-enmz = 32
+enmz = 16
 aimbot(enmx, enmy, enmz)
 
       -- clicked
