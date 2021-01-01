@@ -73,8 +73,8 @@ writeBytes(ffadr + 0x218,gamemode) --restore gamemode
       function()
          -- on
          d3dobject.getComponent("lbl2","f2").text = "LBGTg Activated"
-         end
-lgbtmode(0x3D4)
+         lgbtmode(0x3D4)
+        --c6de
       end,
       function()
          -- off
