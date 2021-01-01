@@ -5,8 +5,8 @@ d3dobject.createForm("f2","Debug",250,140)
 d3dobject.createForm("extra","extra",250,120)
 
 d3dobject.createOnOffToggle("oot1","ESP Team","f1", 10,30) --name,caption,formname,x,y
-d3dobject.createOnOffToggle("oot2","LBGTRED 2","f1", 10,50)
-d3dobject.createOnOffToggle("oot3","dbg","extra", 10,30)
+d3dobject.createOnOffToggle("oot2","Greenled 2","f1", 10,50)
+d3dobject.createOnOffToggle("oot3","redLed","extra", 10,30)
 
 d3dobject.createButton("btn1","Creators","f1",3,140)
 
