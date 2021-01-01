@@ -72,19 +72,13 @@ writeBytes(ffadr + 0x218,gamemode) --restore gamemode
    d3dobject.OnOffToggleClicked(sender,"oot2","f1",
       function()
          -- on
-         d3dobject.getComponent("lbl2","f2").text = "LBGTrgb Activated"
-         if color == nil then
-         color = 0x3B0 --red
-            else
-            color= 0x3D4 --green
-            else
-            color = 0x3F8 -- blue
+         d3dobject.getComponent("lbl2","f2").text = "LBGTg Activated"
          end
-lgbtmode(color)
+lgbtmode(0x3D4)
       end,
       function()
          -- off
-         d3dobject.getComponent("lbl2","f2").text = "LBGTred Deactivated"
+         d3dobject.getComponent("lbl2","f2").text = "LBGTg Deactivated"
 lbgtime.destroy()
 writeFloat(red + color,0.16)
       end
