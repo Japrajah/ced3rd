@@ -56,6 +56,7 @@ end
 
 
 -- lgbt red = 0x3B0 , green = 0x3B0, blue = 0x3B0
+color = 0x3B0
 function lbgtmode(color)
 asb = getAddress("GameAssembly.dll")
   red = readPointer(asb + 0x00B24720)
