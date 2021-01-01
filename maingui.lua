@@ -99,10 +99,8 @@ writeFloat(red + color,0.16)
          )
 
    d3dobject.buttonClicked(sender,"btn1","f1",function()
-enmx = 10
-enmy = 1
-enmz = 16
-aimbot(enmx, enmy, enmz)
+
+aimbot()
 
       -- clicked
       d3dobject.getComponent("lbl1","f2").text = "Japrajah"
