@@ -36,8 +36,19 @@ local pos = readPointer(asb +0x00B2468C )
 writeFloat(pos + cord,di)
 -- posx = readPointer(posx + FC )
 end
+function enmposs(corda)
+asb = getAddress("GameAssembly.dll")
+local pos = readPointer(asb +0x00B35CA8 )
+ pos = readPointer(pos + 0x3C )
+ pos = readPointer(pos + 0x5C )
+  pos = readPointer(pos + 0xC )
+ local pos = readPointer(pos + 0x14 ) -- cord 50 54 58
+ info = readFloat(pos + corda)
+-- posx = readPointer(posx + FC )
+end
 
-function aimbot(enmx, enmy, enmz)
+
+function aimbot()
 myposs(0xFC)
 myx = info
 --y
@@ -46,6 +57,12 @@ myy = info
 --z
 myposs(0x104)
 myz = info
+enmposs(0x50)
+enmx = info
+enmposs(0x54)
+enmy = info
+enmposs(0x58)
+enmz = info
 info = nil
 getdistance(enmx, enmy, enmz, myx, myy, myz) -- 0 1 9 x y z врага
 writedi(0x3C,dix)
