@@ -51,3 +51,38 @@ getdistance(enmx, enmy, enmz, myx, myy, myz) -- 0 1 9 x y z врага
 writedi(0x3C,dix)
 writedi(0x40,diy)
 end
+
+
+
+
+-- lgbt red = 0x3B0 , green = 0x3B0, blue = 0x3B0
+function lbgtmode(color)
+asb = getAddress("GameAssembly.dll")
+  red = readPointer(asb + 0x00B24720)
+  red = readPointer(red + 0x198)
+  red = readPointer(red + 0xCC8)
+  red = readPointer(red + 0x48)
+ red = readPointer(red + 0x34)
+
+lbgtime = createTimer(getMainForm())
+lbgtime.Interval = 70
+local upred = 0.16
+local incr = 0
+local decred = 0
+lbgtime.OnTimer = function(lbgtime)--timer
+maxref = readFloat(red + color)
+  if incr < 1 and maxref < 1 then
+  incr = incr + 0.05
+  upred = upred + 0.04
+  writeFloat(red + 0x3B0,upred)
+ elseif decred < 1 and upred > 0.16 then
+decred = decred +0.05
+upred = upred - 0.05
+ writeFloat(red + 0x3B0,upred)
+  else
+upred = 0.16
+ incr = 0
+ decred = 0
+   end
+  end
+end
