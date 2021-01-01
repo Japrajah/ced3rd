@@ -73,7 +73,7 @@ writeBytes(ffadr + 0x218,gamemode) --restore gamemode
       function()
          -- on
          d3dobject.getComponent("lbl2","f2").text = "LBGTg Activated"
-         lgbtmode(0x3D4)
+         lbgtmode(0x3D4)
         --c6de
       end,
       function()
@@ -86,7 +86,7 @@ writeFloat(red + color,0.16)
       d3dobject.OnOffToggleClicked(sender,"oot3","extra",
       function()
          -- on
-         lgbtmode(0x3B0)
+         lbgtmode(0x3B0)
          d3dobject.getComponent("lbl3","f2").text = "redActivated"
 
          end,
