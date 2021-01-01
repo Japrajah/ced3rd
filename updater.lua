@@ -56,8 +56,8 @@ end
 
 
 -- lgbt red = 0x3B0 , green = 0x3B0, blue = 0x3B0
-color = 0x3B0
-function lbgtmode(color)
+
+function lbgtmode(colors)
 asb = getAddress("GameAssembly.dll")
   red = readPointer(asb + 0x00B24720)
   red = readPointer(red + 0x198)
@@ -71,15 +71,15 @@ local upred = 0.16
 local incr = 0
 local decred = 0
 lbgtime.OnTimer = function(lbgtime)--timer
-maxref = readFloat(red + color)
+maxref = readFloat(red + colors)
   if incr < 1 and maxref < 1 then
   incr = incr + 0.05
   upred = upred + 0.04
-  writeFloat(red + 0x3B0,upred)
+  writeFloat(red + colors,upred)
  elseif decred < 1 and upred > 0.16 then
 decred = decred +0.05
 upred = upred - 0.05
- writeFloat(red + 0x3B0,upred)
+ writeFloat(red + colors,upred)
   else
 upred = 0.16
  incr = 0
