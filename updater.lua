@@ -22,8 +22,8 @@ dix = dix + 180
 else
 dix = dix - 180
 end
-if diy < 90 then
-diy = - diy
+if diy > 90 then
+diy = 90 - diy
 end
 
 end
