@@ -6,6 +6,7 @@ d3dobject.createForm("extra","extra",250,120)
 
 d3dobject.createOnOffToggle("oot1","ESP Team","f1", 10,30) --name,caption,formname,x,y
 d3dobject.createOnOffToggle("oot2","Greenled 2","f1", 10,50)
+d3dobject.createOnOffToggle("oot4","Aimbot 1p","f1", 10,70)
 d3dobject.createOnOffToggle("oot3","redLed","extra", 10,30)
 
 d3dobject.createButton("btn1","Creators","f1",3,140)
@@ -98,9 +99,30 @@ writeFloat(red + color,0.16)
          end
          )
 
-   d3dobject.buttonClicked(sender,"btn1","f1",function()
-
+   d3dobject.OnOffToggleClicked(sender,"oot4","f1",
+      function()
+         -- on
+         aimtimer = createTimer(getMainForm())
+aimtimer.Interval = 10
+aimtimer.OnTimer = function(aimtimer)
+if enmx == nil then
+aimtimer.destroy()
+else
 aimbot()
+end
+end
+
+         d3dobject.getComponent("lbl4","f2").text = "AimbotActivated"
+
+         end,
+      function()
+         aimtimer.destroy()
+         -- off
+         d3dobject.getComponent("lbl4","f2").text = "AimbotDeactivated"
+
+         end
+         )
+   d3dobject.buttonClicked(sender,"btn1","f1",function()
 
       -- clicked
       d3dobject.getComponent("lbl1","f2").text = "Japrajah"
