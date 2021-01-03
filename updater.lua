@@ -12,6 +12,7 @@ end
 
 function getdistance(enmx, enmy, enmz, myx, myy, myz)
 deltaX =  myx - enmx --delta x
+ enmy = enmy - 2
 deltaY =  myy - enmy
 deltaZ =  myz - enmz
 xzlength = math.sqrt((deltaX * deltaX) + (deltaZ * deltaZ))
@@ -22,8 +23,8 @@ dix = dix + 180
 else
 dix = dix - 180
 end
-if diy > 90 then
-diy = 90 - diy
+if diy < 90 then
+diy = - diy
 end
 
 end
