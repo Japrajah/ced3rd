@@ -105,10 +105,12 @@ writeFloat(red + color,0.16)
          aimtimer = createTimer(getMainForm())
 aimtimer.Interval = 10
 aimtimer.OnTimer = function(aimtimer)
-if enmx == nil then
-aimtimer.destroy()
-else
+if enmx ~= nil then
 aimbot()
+elseif enmx ~= nil then
+aimbot()
+else
+aimtimer.destroy()
 end
 end
 
