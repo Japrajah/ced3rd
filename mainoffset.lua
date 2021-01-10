@@ -1,2 +1,2 @@
-dll="Deceit.exe"
-sum=0x0291F180
+
+sum=0x00C76C90
