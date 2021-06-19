@@ -273,6 +273,7 @@ dobj.p.fonts.normal = normal
    dobj.guihideshow = function(kcode,vkey) --function(kcode,vkey)
    if kcode == vkey then
          if dobj.p.guishow == true then
+            dobj.dragFormMode("f1",340,140,false)
             dobj.p.guishow = false
             for i in pairs(dobj.p.forms) do
                dobj.p.forms[i].visible = false
